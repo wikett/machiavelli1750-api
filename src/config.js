@@ -26,9 +26,9 @@ const config = {
     ip: process.env.IP || '0.0.0.0',
     apiRoot: process.env.API_ROOT || '/api',
     defaultEmail: 'no-reply@machiavelli-1750-api.com',
-    sendgridKey: process.env.SENDGRID_KEY,
-    masterKey: process.env.MASTER_KEY,
-    jwtSecret: process.env.JWT_SECRET,
+    sendgridKey: requireProcessEnv('SENDGRID_KEY'),
+    masterKey: requireProcessEnv('MASTER_KEY'),
+    jwtSecret: requireProcessEnv('JWT_SECRET'),
     mongo: {
       options: {
         db: {
@@ -57,7 +57,7 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: 'mongodb://quique:u*5SLtgWXV@ds159856.mlab.com:59856/heroku_q8fr6xxq'
+      uri: process.env.MONGODB_URI || 'mongodb://quique:u*5SLtgWXV@ds159856.mlab.com:59856/heroku_q8fr6xxq'
 
       
     }
