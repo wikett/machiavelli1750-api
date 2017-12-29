@@ -26,9 +26,9 @@ const config = {
     ip: process.env.IP || '0.0.0.0',
     apiRoot: process.env.API_ROOT || '/api',
     defaultEmail: 'no-reply@machiavelli-1750-api.com',
-    sendgridKey: requireProcessEnv('SENDGRID_KEY'),
-    masterKey: requireProcessEnv('MASTER_KEY'),
-    jwtSecret: requireProcessEnv('JWT_SECRET'),
+    sendgridKey: process.env.SENDGRID_KEY,
+    masterKey: process.env.MASTER_KEY,
+    jwtSecret: process.env.JWT_SECRET,
     mongo: {
       options: {
         db: {
