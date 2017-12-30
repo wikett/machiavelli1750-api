@@ -31,9 +31,6 @@ const config = {
     jwtSecret: requireProcessEnv('JWT_SECRET'),
     mongo: {
       options: {
-        db: {
-          safe: true
-        }
       }
     }
   },
@@ -58,8 +55,9 @@ const config = {
     port: process.env.PORT || 8080,
     mongo: {
       uri: process.env.MONGODB_URI || 'mongodb://quique:u*5SLtgWXV@ds159856.mlab.com:59856/heroku_q8fr6xxq'
-
-      
+      options: {
+        debug: false
+      }    
     }
   }
 }
